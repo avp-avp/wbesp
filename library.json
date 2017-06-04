@@ -1,0 +1,23 @@
+{
+    "name": "wbesp",
+    "description": "Control mqtt devices on Wirenboard.",
+    "keywords": "esp8266, wirenboard",
+    "authors": [
+        {
+            "name": "Alexey Pavlov",
+            "email": "alex.p@avp.name",
+            "url": "https://github.com/avp-avp/wbesp/",
+            "maintainer": true
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/avp-avp/wbesp"
+    },
+    "version": "0.0.1",
+    "homepage": "https://github.com/avp-avp/wbesp/blob/master/README.md",
+    "frameworks": "Arduino",
+    "examples": [
+        "examples/*/*.pde"
+    ]
+}
