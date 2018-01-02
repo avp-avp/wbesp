@@ -116,8 +116,10 @@ String CMqttDevice::getTopic()
 void CMqttDevice::Create()
 {
   publish("/meta/name", Description);
-  for (int i=0;i<ControlCount;i++)
+  for (int i=0;i<ControlCount;i++) {
     Controls[i].Create(i+1);
+    Client->loop();
+  }
 }
 
 void CMqttDevice::publish(const char *path, const char *value)
