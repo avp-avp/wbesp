@@ -38,8 +38,10 @@ struct CMqttControl
     bool Readonly;
     String Value;
 
+    CMqttControl();
     CMqttControl(CMqttDevice *parent, const char *topic, ControlType type, bool Readonly=false, const char *value=NULL);
     CMqttControl(const char *topic, ControlType type, bool Readonly=false, const char *value=NULL);
+    void SetType(const char *topic, ControlType type, bool Readonly=false, const char *value=NULL);
     bool isChanged(){return Changed;};
     void Publish(bool onlyChanged=true);
     void Subscribe(bool onlyOn=true);

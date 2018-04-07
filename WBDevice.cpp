@@ -44,6 +44,15 @@ CMqttControl::CMqttControl(CMqttDevice *parent, const char *name, ControlType ty
     Value = value;
 }
 
+void CMqttControl::SetType(const char *name, ControlType type, bool readonly, const char *value)
+{
+	Name = name;
+	Type = type;
+	Readonly = readonly;
+  if (value)
+    Value = value;
+}
+
 void CMqttControl::Create(int order)
 {
   char buffer[20];
