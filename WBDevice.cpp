@@ -29,19 +29,24 @@ const char *g_Topics[] =
 	"",
 };
 
+CMqttControl::CMqttControl()
+	:Name(""), Type(Error), Readonly(true)
+{
+	Value = "";
+}
 
 CMqttControl::CMqttControl(const char *name, ControlType type, bool readonly, const char *value)
-:Name(name), Type(type), Readonly(readonly)
+	:Name(name), Type(type), Readonly(readonly)
 {
-  if (value)
-    Value = value;
+  if (value) Value = value;
+	else Value = "";
 }
 
 CMqttControl::CMqttControl(CMqttDevice *parent, const char *name, ControlType type, bool readonly, const char *value)
 :Parent(parent), Name(name), Type(type), Readonly(readonly)
 {
-  if (value)
-    Value = value;
+  if (value) Value = value;
+	else Value = "";
 }
 
 void CMqttControl::SetType(const char *name, ControlType type, bool readonly, const char *value)
@@ -49,8 +54,8 @@ void CMqttControl::SetType(const char *name, ControlType type, bool readonly, co
 	Name = name;
 	Type = type;
 	Readonly = readonly;
-  if (value)
-    Value = value;
+  if (value) Value = value;
+	else Value = "";
 }
 
 void CMqttControl::Create(int order)
